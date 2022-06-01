@@ -18,6 +18,9 @@ public class CardTrickICE1 {
     {
         Scanner kb = new Scanner(System.in);
         Card[] magicHand = new Card[7]; //Array of object
+        Card luckycard = new card();
+        luckycard.setValue(6);
+        luckycard.setSuits("clubs");
        
         for( int i=0;i<magicHand.length;i++)
         {
