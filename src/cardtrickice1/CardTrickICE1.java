@@ -6,7 +6,7 @@ import java.util.Scanner;
 /** step1 : generate 7 random cards and store in array - how
  * step 2: take any card input from user suit,number
  * step 3: user card is in  the array 'card is found.
- *
+ * some changes
  * @author krupalibhatt
  */
 public class CardTrickICE1 {
