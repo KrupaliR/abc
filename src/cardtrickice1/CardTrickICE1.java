@@ -1,15 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+Student ID:- 991657711
  */
 package cardtrickice1;
-
+import java.util.Scanner;
 /** step1 : generate 7 random cards and store in array - how
  * step 2: take any card input from user suit,number
  * step 3: user card is in  the array 'card is found'
  *
- * @author sivagamasrinivasan,May 23rd
+ * @author krupalibhatt
  */
 public class CardTrickICE1 {
 
@@ -18,16 +16,70 @@ public class CardTrickICE1 {
      */
     public static void main(String[] args) 
     {
+        Scanner kb = new Scanner(System.in);
         Card[] magicHand = new Card[7]; //Array of object
+       
         for( int i=0;i<magicHand.length;i++)
         {
             Card c1 = new Card();
-            c1.setValue(2);//use a method to generate random *13
-            c1.setSuits("hearts");//random method suit 
+            c1.setValue(Card.RandomDigit());
+            c1.setSuits(Card.Randomcard());
+            magicHand[i]= c1;
+            System.out.println(magicHand[i].getValue() + " " + magicHand[i].getSuits());
+            
         }
-        //step 2:take input 
         
-        //step 3: match with array 
+        System.out.println("Enter the card number (1 to 12)");
+        int num = kb.nextInt();
+        System.out.println("Choose the card suits: ");
+        System.out.println("1:hearts\n2:diamonds\n3:spades\n4:clubs");
+        int suitnum = kb.nextInt();
+        String suit= CallSuits(suitnum);
+        
+        boolean match = true ;
+        for(int i =0; i < magicHand.length;i++)
+        {
+            match = true;
+            if((magicHand[i].getValue() == num) && (magicHand[i].getSuits().equals(suit)))
+            {
+                System.out.println("yeh ,card is found");
+                break;
+            }
+
+            else
+            {
+                match = false;
+            }
+        }
+        
+        if(match == false)
+        {
+            System.out.println("sorry ,Card not found");
+        }
     }
+    public static String CallSuits(int a)
+    {
+        String suit= "";
+        switch(a)
+        {
+            case 1:
+            suit= "hearts";
+            break;
+            
+            case 2:
+            suit = "diamonds";
+            break ;
+            
+            case 3:
+            suit ="spades";
+            break;
+            
+            case 4:
+            suit = "clubs";
+            break;
+        
+        }
+        return suit;
     
+    }
 }

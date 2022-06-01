@@ -1,14 +1,12 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ Student ID:- 991657711
  */
 package cardtrickice1;
 
 /** define card value and suits
  * 
  *
- * @author sivagamasrinivasan
+ * @author krupalibhatt
  */
 public class Card 
 {
@@ -43,6 +41,16 @@ public class Card
      */
     public void setSuits(String suits) {
         this.suits = suits;
+    }
+    public static int RandomDigit()
+    {
+        return (int)((Math.random()*12)+1);
+    
+    }
+    public static String Randomcard()
+    {
+        int a = (int)((Math.random()*4));
+        return SUITS[a];
     }
    //number
     
